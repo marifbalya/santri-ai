@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KangSantri AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              light: '#28a745', // Green
+              DEFAULT: '#1b7931',
+              dark: '#125221',
+            },
+            secondary: {
+              light: '#f8f9fa',
+              DEFAULT: '#e9ecef',
+              dark: '#dee2e6',
+            },
+            accent: '#007bff', // Blue accent
+            textLight: '#1f2937', // Dark gray for light mode text
+            textDark: '#f3f4f6', // Light gray for dark mode text
+            bgLight: '#ffffff',
+            bgDark: '#111827', // Dark background
+            bgDarkLighter: '#1f2937', // Slightly lighter dark background for elements
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    html, body, #root {
+      height: 100%;
+    }
+    body { 
+      margin: 0; 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; 
+      overscroll-behavior-y: contain; /* Prevents pull-to-refresh / body scroll on some mobile browsers */
+    }
+    .chat-bubble-user {
+      @apply bg-primary text-white ml-auto;
+    }
+    .chat-bubble-ai {
+      @apply bg-gray-200 text-gray-800 dark:bg-bgDarkLighter dark:text-textDark;
+    }
+    /* Custom scrollbar for webkit browsers */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      @apply bg-gray-100 dark:bg-bgDarkLighter;
+    }
+    ::-webkit-scrollbar-thumb {
+      @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      @apply bg-gray-500 dark:bg-gray-500;
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "react-markdown": "https://esm.sh/react-markdown@^10.1.0",
+    "react-syntax-highlighter/": "https://esm.sh/react-syntax-highlighter@^15.6.1/",
+    "react-syntax-highlighter": "https://esm.sh/react-syntax-highlighter@^15.6.1",
+    "@google/genai": "https://esm.sh/@google/genai@^1.5.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
+  
